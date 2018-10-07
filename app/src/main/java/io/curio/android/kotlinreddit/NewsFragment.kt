@@ -7,18 +7,22 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_news.*
+
 
 class NewsFragment: Fragment(){
 
-    private var newsList: RecyclerView? = null
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.fragment_news, container, false)
-        newsList = view.findViewById(R.id.news_list) as RecyclerView?
-        newsList?.setHasFixedSize(true) // use this setting to improve performance
-        newsList?.layoutManager = LinearLayoutManager(context)
 
         return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        news_list.setHasFixedSize(true) // use this setting to improve performance
+        news_list.layoutManager = LinearLayoutManager(context)
+        news_list.adapter = NewsAdapter()
     }
 
 

@@ -1,4 +1,4 @@
-package io.curio.android.kotlinreddit
+package io.curio.android.kotlinreddit.commons.extensions
 
 import android.view.LayoutInflater
 import android.view.View
